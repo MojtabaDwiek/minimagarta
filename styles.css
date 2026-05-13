@@ -264,6 +264,12 @@ h1 {
   align-items: flex-start;
 }
 
+.service-page .logo {
+  align-self: center;
+  margin-top: -6rem;
+  margin-bottom: -1rem;
+}
+
 .back-link {
   color: var(--muted);
   display: inline-flex;
