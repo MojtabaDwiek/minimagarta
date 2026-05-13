@@ -27,7 +27,7 @@
   </head>
   <body>
     <main class="page-shell">
-      <section class="intro" aria-label="Magarta launch">
+      <section class="intro" aria-label="Magarta launch" data-view="home">
         <img
           class="logo"
           src="assets/logo-white.png"
@@ -45,20 +45,37 @@
 
         <div class="offer" aria-label="Launch offer">
           <strong>50% OFF</strong>
-          <span>+</span>
-          <strong>cutdown</strong>
+          <span>till</span>
+          <div class="countdown" data-countdown="2026-11-28T00:00:00" aria-label="Countdown to grand opening">
+            <span>
+              <strong data-countdown-days>000</strong>
+              <small>days</small>
+            </span>
+            <span>
+              <strong data-countdown-hours>00</strong>
+              <small>hrs</small>
+            </span>
+            <span>
+              <strong data-countdown-minutes>00</strong>
+              <small>min</small>
+            </span>
+            <span>
+              <strong data-countdown-seconds>00</strong>
+              <small>sec</small>
+            </span>
+          </div>
         </div>
 
         <p class="details">On All Services Until The Grand Opening</p>
 
         <div class="service-links" aria-label="Services">
-          <button class="service-button" type="button">
+          <button class="service-button" type="button" data-open-service="consulting">
             Consulting
           </button>
-          <button class="service-button" type="button">
-            E-Commerce Websites
+          <button class="service-button" type="button" data-open-service="ecommerce">
+            E-Commerce Shopify
           </button>
-          <button class="service-button" type="button">
+          <button class="service-button" type="button" data-open-service="portfolio">
             Portfolio Websites
           </button>
         </div>
@@ -103,6 +120,59 @@
             </a>
           </li>
         </ul>
+      </section>
+
+      <section class="service-page is-hidden" aria-labelledby="consulting-title" data-view="consulting">
+        <button class="back-link" type="button" data-open-service="home">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Home
+        </button>
+
+        
+        <h1 id="consulting-title">Consulting</h1>
+        <p class="service-copy">
+          Strategic consulting in management, branding, and marketing plans to help your business grow with clarity, creativity, and impact.
+        </p>
+
+
+        <a class="service-button service-cta" href="https://wa.me/96181626360" target="_blank" rel="noreferrer">
+          Book Consulting
+        </a>
+      </section>
+
+      <section class="service-page is-hidden" aria-labelledby="ecommerce-title" data-view="ecommerce">
+        <button class="back-link" type="button" data-open-service="home">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Home
+        </button>
+
+        
+        <h1 id="ecommerce-title"><span class="nowrap">E-Commerce</span> Shopify</h1>
+        <p class="service-copy">
+          Professional Shopify store creation with modern design, smooth user experience, and optimized solutions to boost your online sales.
+        </p>
+
+
+        <a class="service-button service-cta" href="https://wa.me/96181626360" target="_blank" rel="noreferrer">
+          Start Your Store
+        </a>
+      </section>
+
+      <section class="service-page is-hidden" aria-labelledby="portfolio-title" data-view="portfolio">
+        <button class="back-link" type="button" data-open-service="home">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Home
+        </button>
+
+        
+        <h1 id="portfolio-title">Portfolio Websites</h1>
+        <p class="service-copy">
+          Creative and professional portfolio and CV designs that highlight your skills, experience, and personal brand with elegance.
+        </p>
+
+        <a class="service-button service-cta" href="https://wa.me/96181626360" target="_blank" rel="noreferrer">
+          Build My Portfolio
+        </a>
       </section>
     </main>
 

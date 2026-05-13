@@ -1,4 +1,13 @@
 const buttons = document.querySelectorAll(".service-button");
+const countdown = document.querySelector("[data-countdown]");
+const viewButtons = document.querySelectorAll("[data-open-service]");
+const views = document.querySelectorAll("[data-view]");
+
+const showView = (name) => {
+  views.forEach((view) => {
+    view.classList.toggle("is-hidden", view.dataset.view !== name);
+  });
+};
 
 buttons.forEach((button) => {
   button.addEventListener("pointerdown", () => {
@@ -13,6 +22,36 @@ buttons.forEach((button) => {
     button.classList.remove("is-pressed");
   });
 });
+
+viewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showView(button.dataset.openService);
+  });
+});
+
+if (countdown) {
+  const targetDate = new Date(countdown.dataset.countdown).getTime();
+  const days = countdown.querySelector("[data-countdown-days]");
+  const hours = countdown.querySelector("[data-countdown-hours]");
+  const minutes = countdown.querySelector("[data-countdown-minutes]");
+  const seconds = countdown.querySelector("[data-countdown-seconds]");
+  const second = 1000;
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+
+  const updateCountdown = () => {
+    const remaining = Math.max(targetDate - Date.now(), 0);
+
+    days.textContent = String(Math.floor(remaining / day)).padStart(3, "0");
+    hours.textContent = String(Math.floor((remaining % day) / hour)).padStart(2, "0");
+    minutes.textContent = String(Math.floor((remaining % hour) / minute)).padStart(2, "0");
+    seconds.textContent = String(Math.floor((remaining % minute) / second)).padStart(2, "0");
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, second);
+}
 
 const canvas = document.querySelector(".cursor-trail");
 const ctx = canvas.getContext("2d");
